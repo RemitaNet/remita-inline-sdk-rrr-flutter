@@ -1,5 +1,6 @@
 library remitta_flutter_inline;
 
+
 export 'package:remitta_flutter_inline/src/core/remitta_core.dart';
 export 'package:remitta_flutter_inline/src/core/remitta_env.dart';
 export 'package:remitta_flutter_inline/src/core/remitta_inline_payment.dart';
