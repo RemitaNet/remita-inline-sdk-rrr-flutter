@@ -90,6 +90,6 @@ By contributing to the Flutter library, you agree that your contributions will b
 
 
 ## Support
-Join our Slack channel at http://bit.ly/RemitaDevSlack
-For all other support needs, support@remita.net
+Join our Slack channel at http://bit.ly/RemitaDevSlack.
+ For all other support needs, support@remita.net
 
