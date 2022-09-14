@@ -20,7 +20,7 @@ A Remitta package that helps you accept payment in your flutter application.
 
 ## Usage
 
-### Initializing a RemittaPayment instance
+### Initializing a RemitaPayment instance
 
 To create an instance, you should call the RemittaInlinePayment constructor with the following as parameters:
 
@@ -29,7 +29,7 @@ To create an instance, you should call the RemittaInlinePayment constructor with
 -  `Customizer`
 
 
-It returns an instance of RemittaInlinePayment 
+It returns an instance of RemitaInlinePayment 
 with this instance, we then call the async method `.initiatePayment()`.
 
     _handlePayment() async { 
@@ -83,9 +83,13 @@ Calling `.initiatePayment()` method returns a Future of `PaymentResponse`.
 By contributing to the Flutter library, you agree that your contributions will be licensed under its [MIT license](/LICENSE).
 
 
-
-
 ## Built Using
 
 - [flutter](https://flutter.dev/)
 - [flutter_inappwebview](https://pub.dev/packages/flutter_inappwebview)
+
+
+## Support
+Join our Slack channel at http://bit.ly/RemitaDevSlack
+For all other support needs, support@remita.net
+
