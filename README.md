@@ -1,6 +1,6 @@
 # Remita Flutter Inline Payment
 
-A Remita package that helps you accept payment in your flutter application.
+A Remita package that helps you accept/recieve payment in your flutter application.
 
 ![](assets/inline_screenshot.png)
 
@@ -21,7 +21,7 @@ A Remita package that helps you accept payment in your flutter application.
 ## Usage
 
 ### Initializing a 
-aPayment instance
+a Payment instance
 
 To create an instance, you should call the RemitaInlinePayment constructor with the following as parameters:
 
@@ -91,6 +91,6 @@ By contributing to the Flutter library, you agree that your contributions will b
 
 
 ## Support
-Join our Slack channel at http://bit.ly/RemitaDevSlack.
+Join our Slack community and support channel at http://bit.ly/RemitaDevSlack.
  For all other support needs, support@remita.net
 
