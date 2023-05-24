@@ -14,7 +14,7 @@ A Remita package that helps you accept payment in your flutter application.
 
 ## Installation
 
-1. Add the dependency to your project. In your `pubspec.yaml` file add: `remita_flutter_inline: 1.0.2`
+1. Add the dependency to your project. In your `pubspec.yaml` file add: `remita_flutter_inline: 1.0.3`
 2. Run `flutter pub get`
 
 
