@@ -8,3 +8,6 @@
 * Refactor classes
 * Fixed bugs
 
+# [1.0.3] - May 24, 2023.
+* Bug fixes
+* Configured push to pub.dev

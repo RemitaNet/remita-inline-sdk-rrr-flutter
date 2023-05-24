@@ -1,6 +1,6 @@
 name: remita_flutter_inline
 description: A Remita package that helps you accept payment in your flutter application.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/RemitaNet/remita-inline-sdk-rrr-flutter
 
 environment:
