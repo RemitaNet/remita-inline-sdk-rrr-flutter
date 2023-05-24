@@ -1,10 +1,10 @@
-import 'package:remitta_flutter_inline/remitta_flutter_inline.dart';
+import 'package:remita_flutter_inline/remita_flutter_inline.dart';
 
-/// [RemittaPayment] contract that should be implemented to accept payment.
+/// [RemitaPayment] contract that should be implemented to accept payment.
 ///
-/// For an example implementation see [RemittaInlinePayment] class.
-abstract class RemittaPayment {
-  /// When called will open a remitta modal view to accept payment
+/// For an example implementation see [RemitaInlinePayment] class.
+abstract class RemitaPayment {
+  /// When called will open a remita modal view to accept payment
   ///
   /// Must not be called before instantiating an implementation class
   Future<PaymentResponse> initiatePayment();

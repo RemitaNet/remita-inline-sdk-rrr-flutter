@@ -2,18 +2,18 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:remitta_flutter_inline/src/core/remitta_payment.dart';
-import 'package:remitta_flutter_inline/src/data/payment_request.dart';
-import 'package:remitta_flutter_inline/src/data/payment_response.dart';
-import 'package:remitta_flutter_inline/src/data/payment_response_data.dart';
-import 'package:remitta_flutter_inline/src/data/view_customize.dart';
-import 'package:remitta_flutter_inline/src/utils/constants.dart';
-import 'package:remitta_flutter_inline/src/utils/utils.dart';
-import 'package:remitta_flutter_inline/src/view/remitta_view.dart';
-
-/// [RemittaInlinePayment], a class that implements [RemittaPayment] contract.
+import 'package:remita_flutter_inline/src/core/remita_payment.dart';
+import 'package:remita_flutter_inline/src/data/payment_request.dart';
+import 'package:remita_flutter_inline/src/data/payment_response.dart';
+import 'package:remita_flutter_inline/src/data/payment_response_data.dart';
+import 'package:remita_flutter_inline/src/data/view_customize.dart';
+import 'package:remita_flutter_inline/src/utils/constants.dart';
+import 'package:remita_flutter_inline/src/utils/utils.dart';
+import 'package:remita_flutter_inline/src/view/remita_view.dart';
+import 'package:flutter/foundation.dart';
+/// [RemitaInlinePayment], a class that implements [RemitaPayment] contract.
 ///
-/// Helpful for processing inline payment with Remitta Retrieval Reference Number (RRR).
+/// Helpful for processing inline payment with Remita Retrieval Reference Number (RRR).
 ///
 /// This class present a set of
 /// method that can be used to accept payment from any [StatefulWidget] with a [BuildContext].
@@ -24,12 +24,15 @@ import 'package:remitta_flutter_inline/src/view/remitta_view.dart';
 ///
 /// For usage see example in example/example.dart
 ///
-class RemittaInlinePayment implements RemittaPayment {
+class RemitaInlinePayment implements RemitaPayment {
   final BuildContext buildContext;
   final PaymentRequest paymentRequest;
   final Customizer? customizer;
 
-  RemittaInlinePayment({required this.buildContext, required this.paymentRequest, this.customizer});
+  RemitaInlinePayment(
+      {required this.buildContext,
+      required this.paymentRequest,
+      this.customizer});
 
   @override
   Future<PaymentResponse> verifyPayment() {
@@ -41,24 +44,27 @@ class RemittaInlinePayment implements RemittaPayment {
     return Future.value(_getCancelledResponse());
   }
 
-  /// This method will create a [RemittaInLineView] and push view into widget tree.
+  /// This method will create a [RemitaInLineView] and push view into widget tree.
   ///
   /// When view widget is popped, this method will wrap [ConsoleMessage] to [PaymentResponse]
   ///
-  /// Should be called after [RemittaInlinePayment] is instantiated with required member instance.
+  /// Should be called after [RemitaInlinePayment] is instantiated with required member instance.
   ///
   /// For usage see example/example.dart
   @override
   Future<PaymentResponse> initiatePayment() async {
-    RemittaUtils.isValidPaymentRequest(paymentRequest);
-    var remittaInLineView = RemittaInLineView(paymentRequest: paymentRequest);
-    ConsoleMessage response = await Navigator.of(buildContext).push(MaterialPageRoute(builder: (_) => remittaInLineView));
+    RemitaUtils.isValidPaymentRequest(paymentRequest);
+    var remitaInLineView = RemitaInLineView(paymentRequest: paymentRequest);
+    ConsoleMessage response = await Navigator.of(buildContext)
+        .push(MaterialPageRoute(builder: (_) => remitaInLineView));
     return _getResponseAfterViewPop(response);
   }
 
   PaymentResponse _getResponseAfterViewPop(ConsoleMessage consoleLog) {
     String message = consoleLog.message;
-    if (message.contains('paymentReference') && message.contains("transactionId")) {
+    debugPrint('message: $message');
+    if (message.contains('paymentReference') &&
+        message.contains("transactionId")) {
       Map<String, dynamic> decoded = jsonDecode(message);
       return _getPaymentResponse(PaymentResponseData.fromJson(decoded));
     } else {
@@ -80,16 +86,16 @@ class RemittaInlinePayment implements RemittaPayment {
 
   PaymentResponse _getSuccessfulResponse(PaymentResponseData responseData) {
     return PaymentResponse(
-      message: RemittaConstants.successMessage,
-      code: RemittaConstants.successCode,
+      message: RemitaConstants.successMessage,
+      code: RemitaConstants.successCode,
       data: responseData,
     );
   }
 
   PaymentResponse _getFailedResponse(PaymentResponseData data) {
     return PaymentResponse(
-      message: RemittaConstants.failedMessage,
-      code: RemittaConstants.failedCode,
+      message: RemitaConstants.failedMessage,
+      code: RemitaConstants.failedCode,
       data: data,
     );
   }

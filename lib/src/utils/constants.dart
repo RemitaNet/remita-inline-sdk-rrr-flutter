@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Constant [String], [dynamic] values
-class RemittaConstants {
+class RemitaConstants {
   static const String demoUrlPrefix = "https://remitademo.net";
   static const String productionUrlPrefix = "https://login.remita.net";
 

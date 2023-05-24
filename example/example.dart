@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:remitta_flutter_inline/remitta_flutter_inline.dart';
+import 'package:remita_flutter_inline/remita_flutter_inline.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -77,18 +77,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _initializePayment(BuildContext context, String rrr) async {
     PaymentRequest request = PaymentRequest(
-      environment: RemittaEnvironment.demo,
+      environment: RemitaEnvironment.demo,
       rrr: rrr,
       key: 'enter your key here',
     );
 
-    RemittaPayment remitta = RemittaInlinePayment(
+    RemitaPayment remita = RemitaInlinePayment(
       buildContext: context,
       paymentRequest: request,
       customizer: Customizer(),
     );
 
-    PaymentResponse response = await remitta.initiatePayment();
+    PaymentResponse response = await remita.initiatePayment();
     if (response.code != null && response.code == '00') {
       // transaction successful
       // verify transaction status before providing value

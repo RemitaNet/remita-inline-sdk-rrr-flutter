@@ -1,23 +1,23 @@
 import 'dart:developer';
 
-import 'package:remitta_flutter_inline/src/core/remitta_env.dart';
-import 'package:remitta_flutter_inline/src/utils/constants.dart';
+import 'package:remita_flutter_inline/src/core/remita_env.dart';
+import 'package:remita_flutter_inline/src/utils/constants.dart';
 
 /// An enum for setting the active environment
 /// for which payment/transaction should be processed.
 ///
-enum RemittaEnvironment implements RemittaEnv {
+enum RemitaEnvironment implements RemitaEnv {
   demo,
   production;
 
-  /// Get base environment url prefix from [RemittaEnvironment]
+  /// Get base environment url prefix from [RemitaEnvironment]
   @override
   String getUrl() {
     switch (this) {
-      case RemittaEnvironment.demo:
-        return RemittaConstants.demoUrlPrefix;
-      case RemittaEnvironment.production:
-        return RemittaConstants.productionUrlPrefix;
+      case RemitaEnvironment.demo:
+        return RemitaConstants.demoUrlPrefix;
+      case RemitaEnvironment.production:
+        return RemitaConstants.productionUrlPrefix;
       default:
         log('undefined enum value');
         return '';

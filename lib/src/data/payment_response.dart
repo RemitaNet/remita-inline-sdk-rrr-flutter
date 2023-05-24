@@ -1,4 +1,4 @@
-import 'package:remitta_flutter_inline/src/data/payment_response_data.dart';
+import 'package:remita_flutter_inline/src/data/payment_response_data.dart';
 
 class PaymentResponse {
   String? code = "";

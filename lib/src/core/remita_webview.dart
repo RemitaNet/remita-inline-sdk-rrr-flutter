@@ -1,5 +1,5 @@
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-abstract class RemittaWebView {
+abstract class RemitaWebView {
   Stream<ConsoleMessage> listener();
 }

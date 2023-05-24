@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:remitta_flutter_inline/remitta_flutter_inline.dart';
+import 'package:remita_flutter_inline/remita_flutter_inline.dart';
 
-/// A class for customizing the [RemittaInLineView]
+/// A class for customizing the [RemitaInLineView]
 class Customizer {
   AppBar? appBar;
   Widget? spinner;

@@ -1,9 +1,9 @@
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:remitta_flutter_inline/src/data/environment_enum.dart';
-import 'package:remitta_flutter_inline/src/data/payment_request.dart';
-import 'package:remitta_flutter_inline/src/utils/constants.dart';
+import 'package:remita_flutter_inline/src/data/environment_enum.dart';
+import 'package:remita_flutter_inline/src/data/payment_request.dart';
+import 'package:remita_flutter_inline/src/utils/constants.dart';
 
-class RemittaUtils {
+class RemitaUtils {
   static String getHtmlTemplate(PaymentRequest paymentRequest) {
     var url = paymentRequest.environment.getUrl();
     var publicKey = paymentRequest.key;
@@ -36,16 +36,16 @@ class RemittaUtils {
     ),
   );
 
-  static String getUrl(RemittaEnvironment remittaEnv) {
-    return remittaEnv.getUrl();
+  static String getUrl(RemitaEnvironment remitaEnv) {
+    return remitaEnv.getUrl();
   }
 
   static bool isValidPaymentRequest(PaymentRequest request) {
     if (request.key.isEmpty) {
-      throw Exception(RemittaConstants.exceptionRRR);
+      throw Exception(RemitaConstants.exceptionRRR);
     }
     if (request.rrr.isEmpty) {
-      throw Exception(RemittaConstants.exceptionRRR);
+      throw Exception(RemitaConstants.exceptionRRR);
     }
     return true;
   }

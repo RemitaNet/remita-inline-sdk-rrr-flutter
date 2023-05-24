@@ -2,5 +2,9 @@
 * Initial release
 
 ## [1.0.1] - August 25, 2022.
-* Minor update
+* Minor update#
+
+# [1.0.2] - May 23, 2023.
+* Refactor classes
+* Fixed bugs
 
