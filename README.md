@@ -1,21 +1,32 @@
 # Remita Flutter Inline Payment
 
-A Remita package that helps you accept payment in your flutter application.
+---
+- [Overview](#Overview)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributing](#Contributing)
+
+---
+## Overview
+
+Remita Flutter Inline Payment is a Remita package that helps you accept payment in your flutter application.
 
 ![](assets/inline_screenshot.png)
-
-
-
-## Requirements
-
-1. Remita [API Keys](https://api.remita.net/#63394d54-96c1-4dd8-8255-51e9a55e16df)
-2. Supported Flutter version >= 1.17.0
 
 
 ## Installation
 
 1. Add the dependency to your project. In your `pubspec.yaml` file add: `remita_flutter_inline: 1.0.3`
 2. Run `flutter pub get`
+
+
+### Requirements
+
+1. Remita [API Keys](https://api.remita.net/#63394d54-96c1-4dd8-8255-51e9a55e16df)
+2. Supported Flutter version >= 1.17.0
+
+
+
 
 
 ## Usage
@@ -76,7 +87,20 @@ Calling `.initiatePayment()` method returns a Future of `PaymentResponse`.
 ```
 
 
+## Contributing
+- To contribute to this repo, follow these guidelines for creating issues, proposing new features, and submitting pull requests:
 
+Fork the repository.
+1. Create a new branch: `git checkout -b "feature-name"`
+2. Make your changes and commit: `git commit -m "added some new features"`
+3. Push your changes: `git push origin feature-name`
+4. Submit a Pull Request (PR).
+
+### Useful links
+* Join our Slack Developer/Support channel on [slack](http://bit.ly/RemitaDevSlack)
+    
+### Support
+- For all other support needs, support@remita.net 
 ## License
 
 By contributing to the Flutter library, you agree that your contributions will be licensed under its [MIT license](/LICENSE).
